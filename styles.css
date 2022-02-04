@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 html, body {
@@ -13,29 +14,65 @@ html, body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
     height: 100vh;
     width: 100vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 header {
     grid-row: 1 / 2;
     grid-column: 2/ -1;
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     background-color: white;
-    /* border: 1px solid black; */
+    padding: 15px;
+    margin-right: 15px;
+}
+
+.top-grid-container {
+    display: flex;
+    place-items: center;
+    border: 1px solid red;
+    margin-right: 5%;
+    justify-content: space-around;
+}
+
+.bottom-grid-container {
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
+    border: 1px solid red;
+    margin-right: 5%;
+}
+
+.bottom-grid-container button {
+    color: white;
+    background-color:rgb(18, 134, 250);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
 }
 
 .sidebar {
     grid-row: 1 / -1;
     grid-column: 1 / 2;
+    
+    display: flex;
+    flex-direction: column;
     background-color:dodgerblue;
     color: white;
+    padding: 15px;
 }
 
-.sidebar ul {
-    display: grid;
-    gap: 10px;
+.sidebar li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+#gap-bottom {
+    margin-bottom: 45px;
 }
 
 .sidebar a {
@@ -46,5 +83,54 @@ header {
 .content-container {
     grid-row: 2 / -1;
     grid-column: 2 / -1;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
     background-color:gainsboro;
+    padding: 15px 0px 25px 0px;
+    font-size: .75rem;
+}
+
+.your-projects {
+    grid-column: 1 / 5;
+    grid-row: 1 / -1;
+    border: 1px solid red;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.project-card {
+    background-color: white;
+    border-left: solid orange 5px;
+    border-radius: 5px;
+}
+
+.project-card p {
+    font-size: .75rem;
+    color:lightslategrey;
+}
+
+.project-card h3,
+.project-card p {
+    padding: 15px 15px 0px 15px;
+}
+
+.announcements {
+    grid-column: 5 / 6; 
+    grid-row: 1 / 4;
+    border: 1px solid red;
+    padding-right: 15px;
+}
+
+.trending {
+    grid-column: 5 / 6;
+    grid-row: 4 / 7;
+    border: 1px solid red;
+    padding-right: 15px;
+
 }
